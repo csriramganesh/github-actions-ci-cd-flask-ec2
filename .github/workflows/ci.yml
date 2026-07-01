@@ -22,7 +22,7 @@ jobs:
         run: docker images
 
       - name: Docker login
-        run: echo "${{secrets.DOCKER_PASSWORD}} " | docker login -u "${{secrets.DOCKER_USER}}" --             password-stdin    
+        run: echo "${{secrets.DOCKER_PASSWORD}} " | docker login -u "${{secrets.DOCKER_USER}}" --password-stdin    
           
       - name: docker tag 
         run: docker tag $IMAGE_NAME ${{secrets.DOCKER_USER}}/$IMAGE_NAME:latest
